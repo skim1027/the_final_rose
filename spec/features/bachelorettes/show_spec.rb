@@ -29,6 +29,12 @@ RSpec.describe '/bachelorettes/:id' do
         expect(page).to have_content(@cont2.name)
         expect(page).to_not have_content(@cont3.name)
       end
+
+      it 'shows average age of contestants' do
+        visit "/bachelorettes/#{@bach1.id}"
+
+        expect(page).to have_content("Average Age of Contestants: 29")
+      end
     end
   end
 end

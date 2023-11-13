@@ -18,7 +18,7 @@ def test_data
   @bach3 = Bachelorette.create!(name: "Rachel Lindsay", season_number: 13, description: "A nail biter")
 
   @cont1 = @bach1.contestants.create!(name: "Brandon Jones", age: 26, hometown: "Portland, Oregon")
-  @cont2 = @bach1.contestants.create!(name: "Rick Leach", age: 32, hometown: "Munroe Falls, Ohio")
+  @cont2 = @bach1.contestants.create!(name: "Rick Leach", age: 32, hometown: "Portland, Oregon")
   @cont3 = @bach2.contestants.create!(name: "Jed Wyatt", age: 2, hometown: "Sevierville, Tennessee")
   @cont4 = @bach2.contestants.create!(name: "Mike Johnson", age: 31, hometown: "San Antonio, Texas")
   @cont5 = @bach2.contestants.create!(name: "Devin Harris", age: 27, hometown: "Sherman Oaks, California")
@@ -34,9 +34,12 @@ def test_data
   @out5 = Outing.create!(name: "Cooking Lesson", location: "Le Cordon Bleu", date: '01/01/2021')
 
   ContestantOuting.create!(contestant: @cont1, outing: @out1)
+  ContestantOuting.create!(contestant: @cont1, outing: @out3)
+  ContestantOuting.create!(contestant: @cont2, outing: @out1)
   ContestantOuting.create!(contestant: @cont2, outing: @out2)
   ContestantOuting.create!(contestant: @cont3, outing: @out3)
   ContestantOuting.create!(contestant: @cont4, outing: @out4)
+  ContestantOuting.create!(contestant: @cont1, outing: @out4)
   ContestantOuting.create!(contestant: @cont5, outing: @out5)
   ContestantOuting.create!(contestant: @cont6, outing: @out1)
   ContestantOuting.create!(contestant: @cont7, outing: @out2)

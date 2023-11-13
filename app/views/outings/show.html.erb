@@ -1,0 +1,12 @@
+<h1>Outing Info</h1>
+
+<p><%= @out.name %></p>
+<p>Location: <%= @out.location %></p>
+<p>Date: <%= @out.date %></p>
+
+<p>Count of Contestants: <%= @out.count_contestants %></p>
+<p>Contestants: <% @out.contestants.each do |contestant| %></p>
+  <div id="contestant-<%= contestant.id %>">
+    <p><%= contestant.name %></p>  <%= button_to "Remove", "/outings/#{@out.id}/contestants", method: :delete, params: { :contestant => contestant.id } %>
+  </div>
+<% end %>
